@@ -73,7 +73,7 @@
             <el-col :span="4" class="radio-box">
 
               <label class="demo--label">
-                   <input class="demo--radio erroed af-input" checked type="radio" value="" name="gender">
+                   <input class="demo--radio erroed af-input" checked type="radio"  @change="handlePayChange" v-model="pick" v-bind:value="wxpay" name="gender">
                    <span class="demo--radioInput" ></span>
               </label>
             </el-col>
@@ -95,7 +95,7 @@
             <el-col :span="4" class="radio-box">
 
               <label class="demo--label">
-                   <input class="demo--radio erroed af-input" type="radio" value="" name="gender">
+                   <input class="demo--radio erroed af-input"  @change="handlePayChange" v-model="pick" v-bind:value="zfbpay" type="radio" name="gender">
                    <span class="demo--radioInput" ></span>
               </label>
             </el-col>
@@ -127,6 +127,7 @@
         wxpay: 1,
         zfbpay: 2,
         moneyId: 2, //moneyid
+        pick:'', //选中的 支付方式
         idCheck: true, //
         idChange: false,
         money: 60, //money
@@ -159,6 +160,9 @@
 
       }
 
+    },
+    created(){
+        this.pick=this.wxpay;
     },
     methods: {
       open: function () {
@@ -194,6 +198,10 @@
         //
         this.idChange = !this.idChange;
         this.idCheck = !this.idCheck
+      },
+      //选择支付方式 
+      handlePayChange(){
+        //
       },
       // 确认账号
       handleIDCheck() {
