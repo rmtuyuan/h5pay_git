@@ -458,11 +458,11 @@
     border-radius: .4rem;
   }
 
-  .submit-button:focus {
-    background: #ccc;
+  .submit-button:focus ,  .submit-button:hover{
+    background-color: #ccc;
     border-radius: .4rem;
     color: #666;
-    border: 1px solid #ccc;
+    border-color:  #ccc;
   }
 
   .submit-button.active {
